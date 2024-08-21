@@ -1,0 +1,31 @@
+1. Jelaskan apa yang dimaksud dengan NoSQL menggunakan pemahaman yang kalian ketahui !
+Jawab : 
+Pada dasarnya suatu data itu dibagi menjadi 3 bagian yakni Structured, Semi Structured, dan Unstructur. Untuk SQL adalah Structured Data dimana dalam implementasinya sering digunakan menjadikan data dengan Relasi Antar Data, Untuk kasus Semi Structured dan Unstructured itu adalah NoSQL dalam hal ini dapat menerima data speerti gambar, video, key value, dan lainnya. 
+
+2. Jelaskan kapan harus menggunakan NoSQL dan Relational Database Management System !
+Jawab : 
+NoSQL sangat ideal digunakan ketika data yang dikelola tidak terstruktur atau semi-terstruktur, seperti JSON, XML, atau data multimedia, di mana tidak ada skema yang tetap. Ini juga cocok ketika memerlukan skalabilitas horizontal, karena NoSQL dapat dengan mudah didistribusikan ke banyak server untuk menangani peningkatan beban kerja tanpa batasan skala yang sering terjadi pada RDBMS. Selain itu, NoSQL menawarkan kecepatan dan performa yang lebih baik untuk operasi read dan write dalam skala besar, terutama ketika bekerja dengan data besar (big data). NoSQL juga memberikan fleksibilitas yang lebih baik dalam pengembangan aplikasi yang memerlukan perubahan struktur data yang cepat dan sering berkembang, dibandingkan dengan RDBMS.
+
+3. Sebutkan contoh 2 tools/platform NoSQL selain ElasticSearch beserta keunggulan tools/platform tersebut !
+ 	1. MongoDB:
+	Keunggulan:
+	Dokumentasi yang Kuat yakni MongoDB menyimpan data dalam format JSON-like (BSON), 	yang memudahkan representasi data kompleks secara fleksibel. Skalabilitas yakni  	Mendukung sharding (distribusi data) yang mempermudah penskalaan horizontal. 	Indexing 	yang Fleksibel dimana hal ini Memiliki sistem indexing yang kuat 	untuk performa kuery 	yang cepat.
+
+	2. Cassandra:
+
+	Keunggulan:
+	Desentralisasi yakni Tidak ada satu titik kegagalan karena semua node memiliki 	peran 	yang sama, membuat sistem sangat tahan terhadap kegagalan. Skala Besar dan 	Ketersediaan Tinggi dimaan casandra sering Dirancang untuk menangani data besar 	dengan replikasi yang memastikan ketersediaan data tinggi.
+	Tulis Cepat dalam kasus ini Cassandra dikenal dengan kecepatan tulisnya yang 	tinggi, 	ideal untuk aplikasi yang memerlukan input data terus menerus.
+
+4. Jelaskan apa yang Anda ketahui dari Airflow menggunakan pemahaman dan bahasa Anda sendiri !
+Jawab : 
+Airflow adalah platform manajemen alur kerja (workflow) yang digunakan untuk membuat, menjadwalkan, dan memantau alur kerja yang kompleks. Airflow bekerja dengan menggunakan Directed Acyclic Graphs (DAGs) untuk mendefinisikan alur kerja, di mana setiap node dalam graf mewakili satu tugas atau serangkaian tugas. Airflow sangat berguna dalam mengotomatisasi proses ETL (Extract, Transform, Load) dan berbagai proses data lainnya. Airflow dapat diintegrasikan dengan berbagai platform dan layanan, membuatnya fleksibel dalam berbagai kasus penggunaan.
+
+5. Jelaskan apa yang Anda ketahui dari Great Expectations menggunakan pemahaman dan bahasa Anda sendiri !
+Jawab : 
+Great Expectations adalah suatu alat bantu yang bersifat opensurce yang dimana digunakan untuk memvalidasi suatu data yang betujuan untuk menguji kualitas data. Dalam prinsip kerjanya senderi great expectations akan mengecek data sesuai yang kita tentukan dengan beberapa kondisi serta peringatan apabila data yang kita validasi tidak sesuai dengan yang kita tentukan. Alat ini sangat berguna dalam alur kerja pemrosesan data (pipeline) untuk memastikan bahwa data yang digunakan dalam analisis atau model tetap berkualitas tinggi.
+
+6. Jelaskan apa yang Anda ketahui dari Batch Processing menggunakan pemahaman dan bahasa Anda sendiri (Definisi, Contoh Kasus Penggunaan, Tools, dll) !
+Jawab : 
+Batch Processing adalah metode pengolahan data di mana data dikumpulkan selama periode tertentu dan diproses secara bersamaan dalam satu batch, bukan diproses secara langsung saat data diterima. Metode ini sering digunakan untuk mengolah data dalam jumlah besar yang tidak membutuhkan hasil secara instan
+Contoh : Salah satu contoh penerapan batch processing sederhana menggunakan Airflow adalah pemrosesan log aplikasi setiap malam. Misalnya, sebuah perusahaan memiliki aplikasi yang menghasilkan log penggunaan sepanjang hari. Dengan Airflow, perusahaan dapat membuat sebuah DAG (Directed Acyclic Graph) yang dijadwalkan untuk berjalan setiap malam pada pukul 12:00. DAG ini akan mengumpulkan semua log yang dihasilkan pada hari itu, menggabungkannya, membersihkan data (misalnya, menghapus entri yang tidak relevan), dan kemudian menyimpannya ke dalam database untuk analisis lebih lanjut. Setiap tahap dalam proses ini diatur sebagai tugas terpisah dalam DAG, sehingga jika salah satu tahap gagal, Airflow dapat memberikan notifikasi dan mengulang proses dari titik yang tepat. Ini memungkinkan perusahaan untuk secara otomatis memproses data dalam batch tanpa intervensi manual setiap hari.

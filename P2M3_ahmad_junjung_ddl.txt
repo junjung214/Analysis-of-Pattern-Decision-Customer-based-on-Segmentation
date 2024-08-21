@@ -1,0 +1,42 @@
+-- =================================================
+-- Milestone 3
+-- 
+-- Nama  : Ahmad Junjung S
+-- Batch : FTDS-033-RMT
+-- 
+-- Program ini dibuat untuk melakukan automasi pengambilan data dari postgress server docker lalu di cleaning setalh itu post ke elastic yang akan digunakan untuk analisa terhadap Data yang telah dibersihkan di Elastic nantinya
+-- =================================================
+
+CREATE TABLE table_m3 (
+	"Id" integer unique,
+	"Year_Birth" integer,
+	"Education" varchar(50),
+	"Marital_Status" varchar(50),
+	"Income"	integer, 
+	"Kidhome"	integer,
+	"Teenhome" integer,
+	"Dt_Customer" date,	
+	"Recency" integer,	
+	"MntWines" integer,
+	"MntFruits" integer,
+	"MntMeatProducts" integer,
+	"MntFishProducts"	integer,
+	"MntSweetProducts" integer,
+	"MntGoldProds" integer,
+	"NumDealsPurchases" integer,
+	"NumWebPurchases"	integer,
+	"NumCatalogPurchases"	integer,
+	"NumStorePurchases" integer,
+	"NumWebVisitsMonth" integer,
+	"Response" integer,
+	"Complain" integer
+)
+
+COPY table_m3 ("Id", "Year_Birth", "Education", "Marital_Status", "Income", "Kidhome", 
+	"Teenhome", "Dt_Customer", "Recency", "MntWines", "MntFruits", "MntMeatProducts", "MntFishProducts", 
+	"MntSweetProducts", "MntGoldProds", "NumDealsPurchases", "NumWebPurchases", "NumCatalogPurchases",
+	"NumStorePurchases", "NumWebVisitsMonth", "Response", "Complain"
+)
+FROM 'P2M3_ahmad_junjung_data_raw.csv'
+DELIMITER ','
+CSV HEADER;
